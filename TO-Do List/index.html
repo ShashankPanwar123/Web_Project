@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>To-Do List</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Confetti (canvas-confetti) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js" defer></script>
+  <!-- Main script -->
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+  <main class="container" id="app">
+    <header class="topbar">
+      <div class="title">
+        <h1>📝 To-Do List</h1>
+        <p class="sub">Focus on what matters — deadlines, priorities & progress</p>
+      </div>
+
+      <div class="controls">
+        <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+      </div>
+    </header>
+
+    <section class="create">
+      <input id="taskInput" type="text" placeholder="New task (press Enter to add)" aria-label="New task">
+      <input id="deadlineInput" type="date" aria-label="Deadline (optional)">
+      <select id="prioritySelect" aria-label="Priority">
+        <option value="normal">Normal</option>
+        <option value="high">High priority</option>
+        <option value="low">Low priority</option>
+      </select>
+      <button id="addBtn">Add</button>
+    </section>
+
+    <section class="search-filter">
+      <input id="searchInput" type="search" placeholder="Search tasks..." aria-label="Search tasks">
+      <div class="filters">
+        <button data-filter="all" class="active">All</button>
+        <button data-filter="active">Active</button>
+        <button data-filter="completed">Completed</button>
+        <button data-filter="today">Due Today</button>
+        <button data-filter="overdue">Overdue</button>
+      </div>
+    </section>
+
+    <section class="bulk-actions">
+      <button id="markAllBtn">Mark All Complete</button>
+      <button id="clearCompletedBtn">Clear Completed</button>
+      <button id="clearAllBtn">Clear All</button>
+    </section>
+
+    <ul id="taskList" class="task-list" aria-live="polite"></ul>
+
+    <footer class="footer">
+      <span id="stats">0 tasks</span>
+      <small>Built with ❤️ — drag to reorder • double-click to edit</small>
+    </footer>
+  </main>
+
+  <!-- Edit modal (hidden) -->
+  <div id="editModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="editTitle">
+      <h3 id="editTitle">Edit Task</h3>
+      <input id="editText" type="text" />
+      <input id="editDeadline" type="date" />
+      <select id="editPriority">
+        <option value="normal">Normal</option>
+        <option value="high">High priority</option>
+        <option value="low">Low priority</option>
+      </select>
+      <div class="modal-actions">
+        <button id="saveEdit">Save</button>
+        <button id="cancelEdit">Cancel</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

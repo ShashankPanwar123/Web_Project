@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shashank Panwar | Portfolio</title>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    body {
+      background: #fdfdfd;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(90deg, #2c3e50, #34495e);
+      color: #fff;
+      padding: 20px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: slideDown 1s ease-in-out;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: 0.3s;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #f39c12;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    section {
+      padding: 60px 10%;
+      animation: fadeIn 1s ease-in-out;
+    }
+    #about {
+      text-align: center;
+    }
+    #about img {
+      width: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 4px solid #2c3e50;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease-in-out;
+    }
+    #about img:hover {
+      transform: scale(1.1);
+    }
+    #about h2 {
+      margin-bottom: 15px;
+      font-size: 2rem;
+      color: #2c3e50;
+      animation: slideUp 1s ease-in-out;
+    }
+    .typing {
+      font-size: 1.2rem;
+      color: #f39c12;
+      font-weight: bold;
+      border-right: 3px solid #f39c12;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3s steps(30, end) infinite alternate, blink 0.6s infinite;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 250px; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    #projects {
+      margin-top: 20px;
+    }
+    #projects h2, #contact h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #2c3e50;
+      text-align: center;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      animation: fadeInUp 1s ease-in-out;
+    }
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+    .card h3 {
+      margin-bottom: 12px;
+      color: #f39c12;
+    }
+    #contact {
+      text-align: center;
+    }
+    #contact p {
+      margin: 12px 0;
+      font-size: 1.1rem;
+    }
+    #contact a {
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    #contact a:hover {
+      color: #f39c12;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #2c3e50;
+      color: #fff;
+      font-size: 0.9rem;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Shashank Panwar</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <img src="profile.jpg" alt="Shashank Panwar" />
+    <h2>Hello, I'm Shashank Panwar</h2>
+    <div class="typing">Developer | AI Enthusiast | Learner</div>
+    <p>
+      A Computer Science Engineering (CSE) student specializing in 
+      <b>Artificial Intelligence & Machine Learning</b>.  
+      Passionate about building intelligent solutions, web development, and AI-driven projects.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="project-grid">
+      <div class="card">
+        <h3>AI Chatbot</h3>
+        <p>A simple AI-powered chatbot built using Python and NLP libraries.</p>
+      </div>
+      <div class="card">
+        <h3>Portfolio Website</h3>
+        <p>A clean and responsive personal portfolio (this site!) using HTML, CSS & animations.</p>
+      </div>
+      <div class="card">
+        <h3>ML Model</h3>
+        <p>Machine Learning model for predicting student performance with accuracy optimization.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p><i class="fas fa-envelope"></i> Email: <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank">panwarshashamk@gmail.com</a></p>
+    <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/shashank-panwar-726965381/" target="_blank">linkedin.com/in/shashank-panwar-726965381</a></p>
+    <p><i class="fas fa-phone"></i> Mobile: <a href="tel:+917678122998">+91 7678122998</a></p>
+    <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/917678122998" target="_blank">Chat on WhatsApp</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Shashank Panwar | Portfolio</p>
+  </footer>
+</body>
+</html>

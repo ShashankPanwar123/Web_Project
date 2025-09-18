@@ -1,0 +1,1 @@
+A modern, responsive, and visually appealing website dedicated to football fans. This project showcases information about players, matches, tournaments, rules, and allows users to stay updated through a sign-up form.
