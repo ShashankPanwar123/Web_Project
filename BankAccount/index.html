@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Account Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🏦 Bank Account Management System</h1>
+
+    <!-- Main Menu -->
+    <div id="main-menu">
+      <button onclick="showCreateAccount()">Create Account</button>
+      <button onclick="showLogin()">Login</button>
+      <button onclick="showAccountCount()">Show Total Accounts</button>
+    </div>
+
+    <!-- Create Account Form -->
+    <div id="create-account" class="hidden">
+      <h2>Create New Account</h2>
+      <label>Full Name:</label>
+      <input type="text" id="fullName"><br>
+      <label>DOB (dd/MM/yyyy):</label>
+      <input type="text" id="dob" placeholder="dd/MM/yyyy"><br>
+      <label>Account Type:</label>
+      <select id="accType">
+        <option value="Savings">Savings</option>
+        <option value="Current">Current</option>
+      </select><br>
+      <label>Password:</label>
+      <input type="password" id="password"><br>
+      <label>PIN (4-digit):</label>
+      <input type="password" id="pin"><br>
+      <button onclick="createAccount()">Submit</button>
+      <button onclick="goHome()">Back</button>
+      <p id="create-msg"></p>
+    </div>
+
+    <!-- Login Form -->
+    <div id="login" class="hidden">
+      <h2>Login</h2>
+      <label>Account Number:</label>
+      <input type="text" id="loginAcc"><br>
+      <label>Password:</label>
+      <input type="password" id="loginPwd"><br>
+      <label>PIN:</label>
+      <input type="password" id="loginPin"><br>
+      <button onclick="login()">Login</button>
+      <button onclick="goHome()">Back</button>
+      <p id="login-msg"></p>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="hidden">
+      <h2 id="welcome"></h2>
+      <button onclick="deposit()">Deposit</button>
+      <button onclick="withdraw()">Withdraw</button>
+      <button onclick="checkBalance()">Check Balance</button>
+      <button onclick="changePassword()">Change Password</button>
+      <button onclick="changePin()">Change PIN</button>
+      <button onclick="viewDetails()">View Account Details</button>
+      <button onclick="viewTransactions()">Show Last 5 Transactions</button>
+      <button onclick="applyInterest()">Apply Interest (Savings only)</button>
+      <button onclick="logout()">Logout</button>
+      <div id="output"></div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
